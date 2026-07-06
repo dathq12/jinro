@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JINRO</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&family=Noto+Serif+JP:wght@600&family=Playfair+Display:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="home-page">
+    <div class="viewport">
+        <header class="site-header">
+            <a class="logo" href="index.html">
+                <img class="logo-white" src="assets/images/logo.svg" alt="JINRO">
+                <img class="logo-red" src="assets/images/logo-red.png" alt="" aria-hidden="true">
+            </a>
+            <nav class="main-nav" aria-label="Main navigation">
+                <a href="index.html" class="is-active">HOME</a>
+                <a href="JINRO 眞露株式会社 _ 商品一覧.html">商品一覧</a>
+                <a href="JINRO 眞露株式会社 _ 楽しむ.html">楽しむ</a>
+                <a href="JINRO 眞露株式会社 _ お客様相談室.html">お客様相談室</a>
+                <a href="JINRO 眞露株式会社 _ 企業情報.html">企業情報</a>
+            </nav>
+            <button class="lang-btn" type="button" aria-label="language">
+                <img src="assets/images/icon-language.svg" alt="language">
+            </button>
+        </header>
+        <div class="canvas">
+
+            <!-- ===================== HERO ===================== -->
+            <section class="hero hero-video-banner">
+                <div class="hero-slides" aria-label="JINRO hero videos">
+                    <div class="hero-slide is-active">
+                        <video class="hero-video" src="assets/video/Jinro_KV_01.mp4" muted playsinline autoplay preload="auto"></video>
+                    </div>
+                    <div class="hero-slide">
+                        <video class="hero-video" src="assets/video/Jinro_KV_02.mp4" muted playsinline autoplay preload="auto"></video>
+                    </div>
+                    <div class="hero-slide">
+                        <video class="hero-video" src="assets/video/Jinro_KV_03.mp4" muted playsinline autoplay preload="auto"></video>
+                    </div>
+                </div>
+            </section>
+            <section class="hero hero-old" aria-hidden="true">
+                <div class="hero-slides">
+                    <!-- Slide 1: JINRO -->
+                    <div class="hero-slide hero-slide--jinro is-active">
+                        <img class="hero-word" src="assets/images/jinro-wordmark.svg" alt="JINRO">
+                        <h1 class="hero-h1 hero-h1--de">で、</h1>
+                        <h1 class="hero-h1 hero-h1--rest">いただき<br>ます。</h1>
+                        <div class="hero-bottle hero-bottle--jinro">
+                            <img src="assets/images/bottle-jinro.png" alt="JINRO bottle">
+                        </div>
+                        <p class="hero-sub">料理を引き立てる、<br>JINROの爽やかな味わい。</p>
+                    </div>
+
+                    <!-- Slide 2: TERRA -->
+                    <div class="hero-slide hero-slide--terra">
+                        <h1 class="hero-h2 hero-h2--l1">韓国の、新しい</h1>
+                        <h1 class="hero-h2 hero-h2--l2">クラシックビール。</h1>
+                        <div class="hero-bottle hero-bottle--terra">
+                            <img src="assets/images/bottle-terra.png" alt="TERRA bottle">
+                        </div>
+                        <p class="hero-sub">スッキリとした味わいと<br>爽快な炭酸感のラガービール</p>
+                    </div>
+
+                    <!-- Slide 3: IPPIN -->
+                    <div class="hero-slide hero-slide--ippin">
+                        <h1 class="hero-h2 hero-h2--l1">なめらかな</h1>
+                        <h1 class="hero-h2 hero-h2--l2">喉越しと</h1>
+                        <h1 class="hero-h2 hero-h2--l3">芳醇な</h1>
+                        <h1 class="hero-h2 hero-h2--l4">味わい。</h1>
+                        <div class="hero-bottle hero-bottle--ippin">
+                            <img src="assets/images/bottle-ippin.png" alt="一品眞露 bottle">
+                        </div>
+                        <p class="hero-sub">"凍結ろ過製法"で磨かれた、<br>なめらかな喉越しと芳醇な味わい</p>
+                    </div>
+                </div>
+
+                <div class="hero-slider">
+                    <button class="arrow arrow--prev" type="button" aria-label="前へ">
+                        <img src="assets/images/arrow-prev.svg" alt="">
+                    </button>
+                    <div class="frac">
+                        <span class="cur">1</span>
+                        <img class="slash" src="assets/images/slash.svg" alt="/">
+                        <span class="total">3</span>
+                    </div>
+                    <button class="arrow arrow--next" type="button" aria-label="次へ">
+                        <img src="assets/images/arrow-next.svg" alt="">
+                    </button>
+                </div>
+            </section>
+
+            <!-- ===================== PICKUP ===================== -->
+            <section class="pickup">
+                <div class="section-head pickup-head">
+                    <div class="pickup-title">
+                        <span class="pickup-title-main">PickUp</span>
+                        <span class="pickup-title-sub">おすすめ情報</span>
+                    </div>
+                </div>
+
+                <div class="pickup-content">
+                    <!-- Row 1: Large cards -->
+                    <div class="pickup-row pickup-row--large">
+                        <!-- Card 1: JINRO -->
+                        <div class="pickup-card pickup-card--large pickup-card--red">
+                            <img src="assets/images/Frame 38.png" alt="JINRO">
+                        </div>
+
+                        <!-- Card 2: Chamomile -->
+                        <div class="pickup-card pickup-card--large pickup-card--green">
+                            <div class="pickup-card-overlay">
+                                <img class="pickup-card-overlay-1" src="assets/images/pickup-chamomile-1.png" alt="">
+                                <img class="pickup-card-overlay-2" src="assets/images/pickup-chamomile-2.png" alt="">
+                                <img class="pickup-card-detail" src="assets/images/pickup-chamomile-detail.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 2: Small cards -->
+                    <div class="pickup-row pickup-row--small">
+                        <div class="pickup-card pickup-card--small pickup-card--red">
+                            <img src="assets/images/pickup-yoicha.png" alt="YOICHA">
+                        </div>
+                        <div class="pickup-card pickup-card--small pickup-card--red">
+                            <img src="assets/images/pickup-terra.png" alt="TERRA">
+                        </div>
+                        <div class="pickup-card pickup-card--small pickup-card--red">
+                            <img src="assets/images/pickup-makeup.png" alt="JINRO makeup">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== PRODUCTS ===================== -->
+            <section class="products">
+                <div class="section-head">
+                    <div class="section-title">
+                        <span class="en">Products</span>
+                        <span class="jp">商品一覧</span>
+                    </div>
+                    <div class="carousel-nav">
+                        <button class="prev" type="button" aria-label="前へ">
+                            <img src="assets/images/carousel-arrow.svg" alt="">
+                        </button>
+                        <button class="next" type="button" aria-label="次へ">
+                            <img src="assets/images/carousel-arrow.svg" alt="">
+                        </button>
+                    </div>
+                </div>
+
+                <div class="carousel">
+                    <article class="product">
+                        <div class="circle circle--yoicha">
+                            <img src="./assets/images/Yoicha.png" alt="YOICHAマッコリ">
+                        </div>
+                        <div class="text">
+                            <p class="name">YOICHAマッコリ</p>
+                            <p class="desc">甘さ控えめで、抹茶の香り広がるマッコリ</p>
+                        </div>
+                    </article>
+
+                    <article class="product">
+                        <div class="circle circle--terra">
+                            <img src="./assets/images/Terra.png" alt="TERRA">
+                        </div>
+                        <div class="text">
+                            <p class="name">TERRA</p>
+                            <p class="desc">爽快な炭酸感が特徴<br>苦味と旨みのバランスが取れた<br>韓国大ヒットラガービール</p>
+                        </div>
+                    </article>
+
+                    <article class="product">
+                        <div class="circle circle--ippin">
+                            <img src="./assets/images/品眞露.png" alt="一品眞露">
+                        </div>
+                        <div class="text">
+                            <p class="name">一品眞露</p>
+                            <p class="desc">"凍結ろ過製法"で磨かれた、<br>なめらかな喉越しと芳醇な味わい</p>
+                        </div>
+                    </article>
+
+                    <article class="product">
+                        <div class="circle circle--jinro">
+                            <img src="./assets/images/jinro.png" alt="JINRO">
+                        </div>
+                        <div class="text">
+                            <p class="name">JINRO</p>
+                            <p class="desc">スッキリだから、<br>どんな割り方でも楽しめる。</p>
+                        </div>
+                    </article>
+
+                    <article class="product">
+                        <div class="circle circle--back">
+                            <img src="./assets/images/black.png" alt="眞露 is back">
+                        </div>
+                        <div class="text">
+                            <p class="name">眞露 is back</p>
+                            <p class="desc">あたらしいレトロで、乾杯しよう。<br>話題の焼酎がついに日本デビュー！</p>
+                        </div>
+                    </article>
+
+                    <!-- Clone first item for seamless loop -->
+                    <article class="product">
+                        <div class="circle circle--yoicha">
+                            <img src="./assets/images/Yoicha.png" alt="YOICHAマッコリ">
+                        </div>
+                        <div class="text">
+                            <p class="name">YOICHAマッコリ</p>
+                            <p class="desc">甘さ控えめで、抹茶の香り広がるマッコリ</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- ===================== SNS ===================== -->
+            <section class="sns" id="sns">
+                <div class="sns-inner">
+                    <div class="section-head">
+                        <div class="section-title">
+                            <span class="en">SNS</span>
+                            <span class="jp">ブランドの瞬間</span>
+                        </div>
+                        <button class="btn-viewall" type="button" aria-label="SNS一覧を見る">
+                            <span>一覧を見る</span>
+                            <span class="ico">＋</span>
+                        </button>
+                    </div>
+
+                    <div class="sns-track" aria-label="SNS video list">
+                        <button class="sns-card" type="button" data-video="assets/sns/JINRO_sns_1.mp4" aria-label="SNS video 1">
+                            <video src="assets/sns/JINRO_sns_1.mp4" muted playsinline loop preload="metadata"></video>
+                            <span class="sns-play" aria-hidden="true"></span>
+                        </button>
+                        <button class="sns-card" type="button" data-video="assets/sns/JINRO_sns_2.mp4" aria-label="SNS video 2">
+                            <video src="assets/sns/JINRO_sns_2.mp4" muted playsinline loop preload="metadata"></video>
+                            <span class="sns-play" aria-hidden="true"></span>
+                        </button>
+                        <button class="sns-card" type="button" data-video="assets/sns/JINRO_sns_3.mp4" aria-label="SNS video 3">
+                            <video src="assets/sns/JINRO_sns_3.mp4" muted playsinline loop preload="metadata"></video>
+                            <span class="sns-play" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== COCKTAIL & MOVIE ===================== -->
+            <section class="cocktail-movie">
+                <div class="cm-container">
+                    <!-- Cocktail Recipe Card -->
+                    <div class="cm-card cm-card--cocktail">
+                        <img src="assets/images/cocktail recipe.png" alt="Cocktail Recipe">
+                    </div>
+
+                    <!-- Movie Card -->
+                    <div class="cm-card cm-card--movie">
+                        <img src="assets/images/movie.png" alt="Movie">
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== NEWS ===================== -->
+            <section class="news">
+                <div class="news-inner">
+                    <div class="section-head">
+                        <div class="section-title">
+                            <span class="en">News Release</span>
+                            <span class="jp">ニュースリリース</span>
+                        </div>
+                        <button class="btn-viewall" type="button">
+                            <span>一覧を見る</span>
+                            <span class="ico"><img src="assets/images/icon-arrow.svg" alt=""></span>
+                        </button>
+                    </div>
+
+                    <div class="news-list">
+                        <div class="news-row">
+                            <span class="news-badge">プレスリリース</span>
+                            <p class="news-title">韓国で注目の"抹茶トレンド"をマッコリで味わう「JINRO YOICHAマッコリ 抹茶」5月22日 (金) 新発売</p>
+                            <span class="news-date">2024.12.16</span>
+                        </div>
+                        <div class="news-row">
+                            <span class="news-badge">プレスリリース</span>
+                            <p class="news-title">チャミスルメロンが数量限定で新発売！</p>
+                            <span class="news-date">2024.12.16</span>
+                        </div>
+                        <div class="news-row">
+                            <span class="news-badge">プレスリリース</span>
+                            <p class="news-title">お花見イベントにチャミスルが協賛！「うえの桜フェスタ（3/28・29）」「名古屋城春まつり（4/4・5）」</p>
+                            <span class="news-date">2024.12.16</span>
+                        </div>
+                        <div class="news-row">
+                            <span class="news-badge">プレスリリース</span>
+                            <p class="news-title">人気のはしご酒イベント「下北沢 チーズと激辛はしご酒」にチャミスルレモンの協賛が決定！ ～「ルパン三世×チャミスルレモン」のオリジナルグッズが貰える～</p>
+                            <span class="news-date">2024.12.16</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== FOOTER ===================== -->
+            <footer class="footer">
+                <div class="footer-content">
+                    <div class="footer-left">
+                        <div class="footer-logo">
+                            <img src="assets/images/footer-logo.svg" alt="JINRO">
+                        </div>
+                        <nav class="footer-nav">
+                            <a href="#" class="footer-nav-item">企業情報</a>
+                            <a href="#" class="footer-nav-item">企業概要</a>
+                            <a href="#" class="footer-nav-item">CSR</a>
+                            <a href="#" class="footer-nav-item">プライバシーポリシー</a>
+                            <a href="#" class="footer-nav-item">ご利用規約</a>
+                            <a href="#" class="footer-nav-item">サイトマップ</a>
+                        </nav>
+                        <p class="footer-copyright">Copyright © JINRO INC. All right reserved.</p>
+                    </div>
+                    <div class="footer-socials">
+                        <a href="#" class="footer-social-icon" aria-label="Instagram">
+                            <img src="assets/images/footer-instagram.svg" alt="Instagram">
+                        </a>
+                        <a href="#" class="footer-social-icon" aria-label="TikTok">
+                            <img src="assets/images/footer-tiktok.svg" alt="TikTok">
+                        </a>
+                        <a href="#" class="footer-social-icon" aria-label="YouTube">
+                            <img src="assets/images/footer-youtube.svg" alt="YouTube">
+                        </a>
+                        <a href="#" class="footer-social-icon" aria-label="Twitter">
+                            <img src="assets/images/footer-twitter.svg" alt="Twitter">
+                        </a>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+
+    <div class="sns-modal" id="snsModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="SNS video player">
+        <button class="sns-modal-close" type="button" aria-label="閉じる">×</button>
+        <video class="sns-modal-video" controls playsinline></video>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

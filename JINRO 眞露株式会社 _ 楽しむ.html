@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="キャンペーン情報、JINROの動画コンテンツ、お酒に合う料理レシピやカクテルの作り方など、お客様に楽しんでいただける情報をお届けします。">
+    <title>JINRO 眞露株式会社 | 楽しむ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&family=Noto+Serif+JP:wght@600&family=Playfair+Display:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        :root { --page-max: 1360px; --soft: #f5f7fa; --green: #208701; }
+        html, body { height: auto; scroll-behavior: smooth; }
+        .viewport { overflow: visible; }
+        .canvas { width: 100%; height: auto; transform: none !important; }
+        .site-header { width: 100%; height: 96px; }
+        .main-nav a { text-shadow: 0 1px 14px rgba(0,0,0,.12); }
+        .site-header.scrolled .main-nav a { text-shadow: none; }
+        .page-hero { position: relative; min-height: 620px; padding: 172px max(40px, calc((100vw - var(--page-max)) / 2)) 96px; color: #fff; background: radial-gradient(circle at 75% 18%, rgba(255,255,255,.22), transparent 25%), linear-gradient(135deg, #e10017 0%, #c00016 52%, #8c0010 100%); overflow: hidden; }
+        .page-hero:after { content: ""; position: absolute; right: max(20px, calc((100vw - var(--page-max)) / 2)); bottom: -140px; width: min(42vw, 520px); aspect-ratio: 1; border-radius: 50%; border: 1px solid rgba(255,255,255,.24); }
+        .page-kicker { font-family: var(--font-serif-en); font-size: clamp(64px, 8vw, 124px); line-height: .92; font-weight: 300; margin: 0 0 22px; }
+        .page-title { font-size: clamp(24px, 3vw, 44px); line-height: 1.25; font-weight: 800; margin: 0 0 24px; }
+        .page-lead { max-width: 800px; font-size: clamp(16px, 1.5vw, 22px); line-height: 1.8; font-weight: 500; margin: 0; }
+        .crumbs { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 54px; font-size: 13px; font-weight: 700; opacity: .86; }
+        .crumbs a { color: #fff; text-decoration: none; }
+        .page-section { padding: 112px max(28px, calc((100vw - var(--page-max)) / 2)); background: #fff; }
+        .page-section.is-soft {     background: linear-gradient(0deg, rgb(231 235 242 / 0%), rgb(231 235 242 / 30%)), #fff;}
+        .section-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 28px; margin-bottom: 48px; }
+        .section-title { position: static; transform: none; width: auto; }
+        .section-title .en { letter-spacing: 0; }
+        .section-note { max-width: 560px; color: #5d5d5d; font-size: 16px; line-height: 1.8; }
+        .card-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; }
+        .content-card { position: relative; overflow: hidden; border-radius: 8px; background: #fff; color: #121212; text-decoration: none; transition: transform .25s ease; }
+        .content-card:hover { transform: translateY(-6px); }
+        .content-card.is-wide { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; min-height: 360px; }
+        .card-copy { padding: 42px; display: flex; flex-direction: column; justify-content: space-between; gap: 28px; background: #f2f4f7;}
+        .label { color: var(--red); font-weight: 800; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; }
+        .card-title { margin: 8px 0 12px; font-family: var(--font-serif-jp); font-size: 30px; line-height: 1.3; font-weight: 600; }
+        .card-text { color: #5b5b5b; font-size: 15px; line-height: 1.75; }
+        .text-link { display: inline-flex; align-items: center; justify-content: center; width: fit-content; min-height: 48px; padding: 0 22px; border: 1px solid #121212; border-radius: 999px; color: #121212; text-decoration: none; font-weight: 800; font-size: 14px; transition: .2s ease; }
+        .content-card:hover .text-link, .text-link:hover { background: #121212; color: #fff; }
+        .image-frame { position: relative; min-height: 260px; background: #f1f3f6; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        .image-frame img { width: 100%; height: 100%; object-fit: cover; }
+        .image-frame.is-missing img { display: none; }
+        .image-frame.is-missing:after { content: attr(data-fallback); color: #999; font-weight: 800; text-align: center; padding: 24px; }
+        .recipe-card { display: grid; grid-template-columns: 1fr; min-height: 520px; }
+        .recipe-card .image-frame { min-height: 320px; order: -1; }
+        .movie-layout { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(320px, .85fr); gap: 32px; align-items: stretch; }
+        .movie-main, .playlist { border-radius: 8px; background: #fff;  overflow: hidden; }
+        .movie-thumb { position: relative; display: block; aspect-ratio: 16 / 9; background: #121212; }
+        .movie-thumb img { width: 100%; height: 100%; object-fit: cover; opacity: .92; }
+        .play { position: absolute; left: 50%; top: 50%; width: 76px; height: 76px; transform: translate(-50%, -50%); border-radius: 50%; background: #fff; }
+        .play:after { content: ""; position: absolute; left: 31px; top: 24px; border-left: 22px solid var(--red); border-top: 14px solid transparent; border-bottom: 14px solid transparent; }
+        .movie-caption { padding: 26px 30px 32px; font-weight: 800; font-size: 20px; line-height: 1.5; }
+        .playlist { padding: 12px; max-height: 100%; overflow: auto; }
+        .playlist a { display: grid; grid-template-columns: 128px 1fr; gap: 16px; align-items: center; color: #121212; text-decoration: none; padding: 12px; border-radius: 8px; transition: background .2s ease; }
+        .playlist a:hover, .playlist a.is-active { background: #f2f4f7; }
+        .playlist .mini { position: relative; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 6px; background: #121212; }
+        .playlist .mini img { width: 100%; height: 100%; object-fit: cover; opacity: .94; }
+        .playlist p { font-size: 15px; line-height: 1.5; font-weight: 800; }
+        .channel-link { margin-top: 32px; }
+        .footer { width: 100%; height: auto; min-height: 360px; }
+        .footer-content { position: static; width: 100%; height: auto; min-height: 360px; padding: 96px max(32px, calc((100vw - var(--page-max)) / 2)); }
+        .footer-socials { padding-right: 0; }
+        @media (max-width: 980px) { .card-grid, .content-card.is-wide, .movie-layout { grid-template-columns: 1fr; } .content-card.is-wide .image-frame { order: -1; } }
+        @media (max-width: 900px) { .site-header { height: 120px; } .site-header .logo { top: 18px; left: 20px; } .lang-btn { top: 22px; right: 20px; } .main-nav { left: 16px; right: 16px; top: 68px; transform: none; height: 42px; justify-content: flex-start; gap: 22px; overflow-x: auto; scrollbar-width: none; } .main-nav a { height: 42px; font-size: 13px; } .page-hero { min-height: 560px; padding-top: 178px; } .section-heading { align-items: flex-start; flex-direction: column; } .section-title { align-items: flex-start; flex-direction: column; gap: 10px; } .section-title .en { font-size: 54px; } .section-title .jp { padding-bottom: 0; } .footer-content { flex-direction: column; gap: 44px; } }
+        @media (max-width: 560px) { .page-section { padding: 76px 20px; } .card-copy { padding: 28px; } .playlist a { grid-template-columns: 104px 1fr; gap: 12px; } .movie-caption { font-size: 17px; } .footer-nav { gap: 18px 24px; } }
+    </style>
+</head>
+<body>
+    <div class="viewport">
+        <header class="site-header">
+            <a class="logo" href="index.html">
+                <img class="logo-white" src="assets/images/logo.svg" alt="JINRO">
+                <img class="logo-red" src="assets/images/logo-red.png" alt="" aria-hidden="true">
+            </a>
+            <nav class="main-nav" aria-label="Main navigation">
+                <a href="index.html">HOME</a>
+                <a href="JINRO 眞露株式会社 _ 商品一覧.html">商品一覧</a>
+                <a href="JINRO 眞露株式会社 _ 楽しむ.html" class="is-active">楽しむ</a>
+                <a href="JINRO 眞露株式会社 _ お客様相談室.html">お客様相談室</a>
+                <a href="JINRO 眞露株式会社 _ 企業情報.html">企業情報</a>
+            </nav>
+            <button class="lang-btn" type="button" aria-label="language"><img src="assets/images/icon-language.svg" alt=""></button>
+        </header>
+
+        <div class="canvas">
+            <main>
+                <section class="page-hero">
+                    <p class="page-kicker">Enjoy</p>
+                    <h1 class="page-title">楽しむ</h1>
+                    <p class="page-lead">カクテルや料理のレシピ、JINROの動画、キャンペーンやスペシャルコンテンツまで。お酒の時間をもっとおいしく、もっと楽しくする情報を集めました。</p>
+                    <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">JINRO TOP</a><span>/</span><span>楽しむ</span></nav>
+                </section>
+
+                <section class="page-section">
+                    <div class="section-heading">
+                        <div class="section-title">
+                            <span class="en">Special</span>
+                            <span class="jp">おすすめコンテンツ</span>
+                        </div>
+                    </div>
+                    <div class="card-grid">
+                        <a class="content-card is-wide" href="https://jinro.co.jp/enjoy/snack_card/index.html">
+                            <div class="card-copy">
+                                <div>
+                                    <span class="label">Snack Mama Card Collection</span>
+                                    <h2 class="card-title">スナックママカードコレクション</h2>
+                                    <p class="card-text">JINROと一緒に楽しむスペシャルコンテンツ。気軽に覗いて、いつもの時間に少しだけ遊び心を。</p>
+                                </div>
+                                <span class="text-link">詳しく見る</span>
+                            </div>
+                            <div class="image-frame" data-fallback="SNACK MAMA CARD COLLECTION">
+                                <img src="JINRO 眞露株式会社 _ 楽しむ_files/bnr_snack_card.jpg" alt="SNACK MAMA CARD COLLECTION">
+                            </div>
+                        </a>
+                    </div>
+                </section>
+
+                <section class="page-section is-soft">
+                    <div class="section-heading">
+                        <div class="section-title">
+                            <span class="en">Recipe</span>
+                            <span class="jp">カクテル・料理レシピ</span>
+                        </div>
+                        <p class="section-note">JINROにぴったりなカクテルと料理を、シーンに合わせて楽しめます。</p>
+                    </div>
+                    <div class="card-grid">
+                        <a class="content-card recipe-card" href="https://jinro.co.jp/gurume/cocktail/index.html">
+                            <div class="image-frame" data-fallback="COCKTAIL RECIPE"><img src="JINRO 眞露株式会社 _ 楽しむ_files/recipe_pic0.jpg" alt="COCKTAIL RECIPE カクテルレシピ"></div>
+                            <div class="card-copy">
+                                <div><span class="label">Cocktail Recipe</span><h2 class="card-title">カクテルレシピ</h2><p class="card-text">すっきりとしたJINROの味わいを活かした、気軽に作れるカクテルレシピ。</p></div>
+                                <span class="text-link">レシピを見る</span>
+                            </div>
+                        </a>
+                        <a class="content-card recipe-card" href="https://jinro.co.jp/gurume/food/index.html">
+                            <div class="image-frame" data-fallback="COOKING RECIPE"><img src="JINRO 眞露株式会社 _ 楽しむ_files/recipe_pic1.jpg" alt="COOKING RECIPE JINROにぴったり 美味しい料理"></div>
+                            <div class="card-copy">
+                                <div><span class="label">Cooking Recipe</span><h2 class="card-title">JINROにぴったり 美味しい料理</h2><p class="card-text">食卓や乾杯の時間に寄り添う、JINROと相性のよい料理レシピ。</p></div>
+                                <span class="text-link">レシピを見る</span>
+                            </div>
+                        </a>
+                    </div>
+                </section>
+
+                <section class="page-section" id="Movie">
+                    <div class="section-heading">
+                        <div class="section-title">
+                            <span class="en">Movie</span>
+                            <span class="jp">ムービー</span>
+                        </div>
+                        <p class="section-note">JINROより最新のCMや動画をご案内いたします。</p>
+                    </div>
+
+                    <div class="movie-layout">
+                        <article class="movie-main">
+                            <a class="movie-thumb" id="mainMovieLink" href="https://www.youtube.com/watch?v=1mWg7UUyWZ0" target="_blank" rel="noopener">
+                                <img id="mainMovieImage" src="JINRO 眞露株式会社 _ 楽しむ_files/sddefault.jpg" alt="">
+                                <span class="play" aria-hidden="true"></span>
+                            </a>
+                            <p class="movie-caption" id="mainMovieTitle">チャミスル フレーバーラインアップ篇</p>
+                        </article>
+
+                        <nav class="playlist" aria-label="Movie playlist">
+                            <a href="https://www.youtube.com/watch?v=wEHG6Z7xUes" data-title="チャミスル マスカット篇" data-img="JINRO 眞露株式会社 _ 楽しむ_files/mqdefault.jpg" target="_blank" rel="noopener">
+                                <span class="mini"><img src="JINRO 眞露株式会社 _ 楽しむ_files/mqdefault.jpg" alt=""></span>
+                                <p>チャミスル マスカット篇</p>
+                            </a>
+                            <a href="https://www.youtube.com/watch?v=fgBwmrT5M8g" data-title="チャミスル ピーチ篇" data-img="JINRO 眞露株式会社 _ 楽しむ_files/mqdefault(1).jpg" target="_blank" rel="noopener">
+                                <span class="mini"><img src="JINRO 眞露株式会社 _ 楽しむ_files/mqdefault(1).jpg" alt=""></span>
+                                <p>チャミスル ピーチ篇</p>
+                            </a>
+                            <a href="https://www.youtube.com/watch?v=bUBN1dkBSLc" data-title="チャミスル グレープフルーツ篇" data-img="JINRO 眞露株式会社 _ 楽しむ_files/mqdefault(2).jpg" target="_blank" rel="noopener">
+                                <span class="mini"><img src="JINRO 眞露株式会社 _ 楽しむ_files/mqdefault(2).jpg" alt=""></span>
+                                <p>チャミスル グレープフルーツ篇</p>
+                            </a>
+                            <a href="https://www.youtube.com/watch?v=bwsUHBzvxKk" data-title="チャミスル すもも篇" data-img="JINRO 眞露株式会社 _ 楽しむ_files/mqdefault(3).jpg" target="_blank" rel="noopener">
+                                <span class="mini"><img src="JINRO 眞露株式会社 _ 楽しむ_files/mqdefault(3).jpg" alt=""></span>
+                                <p>チャミスル すもも篇</p>
+                            </a>
+                        </nav>
+                    </div>
+                    <a class="text-link channel-link" href="https://www.youtube.com/channel/UC1jxcH4MoKnCARp1bGtBv5g" target="_blank" rel="noopener">JINRO（ジンロ）公式チャンネルはこちら</a>
+                </section>
+            </main>
+
+            <footer class="footer">
+                <div class="footer-content">
+                    <div class="footer-left">
+                        <div class="footer-logo"><img src="assets/images/footer-logo.svg" alt="JINRO"></div>
+                        <nav class="footer-nav" aria-label="Footer navigation">
+                            <a href="JINRO 眞露株式会社 _ 企業情報.html" class="footer-nav-item">企業情報</a>
+                            <a href="https://jinro.co.jp/company/outline/" class="footer-nav-item">企業概要</a>
+                            <a href="https://jinro.co.jp/csr/" class="footer-nav-item">CSR</a>
+                            <a href="https://jinro.co.jp/privacy/" class="footer-nav-item">プライバシーポリシー</a>
+                            <a href="https://jinro.co.jp/guide/" class="footer-nav-item">ご利用規約</a>
+                            <a href="https://jinro.co.jp/sitemap/" class="footer-nav-item">サイトマップ</a>
+                        </nav>
+                        <p class="footer-copyright">Copyright © JINRO INC. All right reserved.</p>
+                    </div>
+                    <div class="footer-socials">
+                        <a href="https://www.instagram.com/jinro_jinro/?hl=ja" class="footer-social-icon" aria-label="Instagram"><img src="assets/images/footer-instagram.svg" alt=""></a>
+                        <a href="https://www.tiktok.com/@chamisul_jpn?lang=ja-JP" class="footer-social-icon" aria-label="TikTok"><img src="assets/images/footer-tiktok.svg" alt=""></a>
+                        <a href="https://www.youtube.com/channel/UC1jxcH4MoKnCARp1bGtBv5g" class="footer-social-icon" aria-label="YouTube"><img src="assets/images/footer-youtube.svg" alt=""></a>
+                        <a href="https://twitter.com/jinrojapan" class="footer-social-icon" aria-label="Twitter"><img src="assets/images/footer-twitter.svg" alt=""></a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            var header = document.querySelector('.site-header');
+            function onScroll() { header.classList.toggle('scrolled', window.scrollY > 48); }
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
+
+            document.querySelectorAll('img').forEach(function (img) {
+                img.addEventListener('error', function () {
+                    var frame = img.closest('.image-frame');
+                    if (frame) frame.classList.add('is-missing');
+                });
+            });
+
+            var mainLink = document.getElementById('mainMovieLink');
+            var mainImage = document.getElementById('mainMovieImage');
+            var mainTitle = document.getElementById('mainMovieTitle');
+            document.querySelectorAll('.playlist a').forEach(function (item) {
+                item.addEventListener('click', function (event) {
+                    if (event.metaKey || event.ctrlKey) return;
+                    event.preventDefault();
+                    document.querySelectorAll('.playlist a').forEach(function (link) { link.classList.remove('is-active'); });
+                    item.classList.add('is-active');
+                    mainLink.href = item.href;
+                    mainImage.src = item.getAttribute('data-img');
+                    mainTitle.textContent = item.getAttribute('data-title');
+                    mainLink.focus({ preventScroll: true });
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
