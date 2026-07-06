@@ -66,12 +66,23 @@
 
     var index = 0;
     var fallbackTimer = null;
-
+    var nextDelay = 500; 
+    
     function clearFallbackTimer() {
         if (fallbackTimer) {
             window.clearTimeout(fallbackTimer);
             fallbackTimer = null;
         }
+    }
+
+    function showNextWithDelay(slideIndex) {
+        clearFallbackTimer();
+
+        fallbackTimer = window.setTimeout(function () {
+            if (index === slideIndex) {
+                show(slideIndex + 1);
+            }
+        }, nextDelay);
     }
 
     function scheduleNext(video, slideIndex) {
@@ -83,7 +94,7 @@
             if (index === slideIndex) {
                 show(slideIndex + 1);
             }
-        }, remaining * 1000 + 120);
+        }, remaining * 1000 + nextDelay + 120);
     }
 
     function playActiveVideo(video, slideIndex) {
@@ -129,7 +140,7 @@
 
         video.addEventListener('ended', function () {
             if (index === slideIndex) {
-                show(slideIndex + 1);
+                showNextWithDelay(slideIndex);
             }
         });
 
